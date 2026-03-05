@@ -239,7 +239,7 @@ python server.py
 # .env
 POSTGRES_USER=payment_user
 POSTGRES_PASSWORD=payment_pass
-POSTGRES_HOST=localhost
+# POSTGRES_HOST=localhost
 POSTGRES_PORT=5432
 POSTGRES_DB=payment_db
 BANK_API_BASE_URL=http://localhost:8001
