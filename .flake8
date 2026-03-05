@@ -1,0 +1,4 @@
+[flake8]
+extend-ignore = F405,F841,F401,F403,E501,E722
+max-line-length = 120
+exclude = venv,.venv,.env,env,./alembic,contract.py,./test.py,./test2.py

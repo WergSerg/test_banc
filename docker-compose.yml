@@ -1,0 +1,33 @@
+services:
+  postgres:
+    image: postgres:15
+    env_file:
+      - .env
+    ports:
+      - "5432:5432"
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+
+  app:
+    build: .
+    ports:
+      - "8000:8000"
+    env_file:
+      - .env
+    depends_on:
+      - postgres
+      - mock-bank
+    volumes:
+      - .:/app
+
+  mock-bank:
+    image: python:3.11-slim
+    command: python -m http.server 8001
+    ports:
+      - "8001:8001"
+    volumes:
+      - ./mock_bank:/app
+    working_dir: /app
+
+volumes:
+  postgres_data:
