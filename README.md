@@ -237,11 +237,19 @@ python server.py
 
 ```env
 # .env
-DATABASE_URL=postgresql://payment_user:payment_pass@localhost:5432/payment_db
+POSTGRES_USER=payment_user
+POSTGRES_PASSWORD=payment_pass
+POSTGRES_HOST=localhost
+POSTGRES_PORT=5432
+POSTGRES_DB=payment_db
 BANK_API_BASE_URL=http://localhost:8001
-BANK_API_TIMEOUT=30
-BANK_API_MAX_RETRIES=3
-SYNC_BANK_PAYMENTS_INTERVAL=300
+SYNC_BANK_PAYMENTS_INTERVAL=60
+WEBHOOK_SECRET_KEY=dev_secret_key
+API_KEY=dev-api-key
+SECRET_KEY=dev-secret-key
+LOG_LEVEL=DEBUG
+ENABLE_WEBHOOKS=True
+ENABLE_POLLING=True
 ```
 
 ## Тестирование
